@@ -1,2 +1,1 @@
-# SiteIndexer
-Internal Site Indexer
+SiteIndexer
