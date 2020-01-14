@@ -18,7 +18,7 @@ Provide README to BUILD, RUN, and TEST the code.
         * maven-checkstyle-plugin 3.0.0
         * checkstyle 8.10
         * maven-jar-plugin 3.1.0
-    * Build Instructions (from root of project)
+    * Build Instructions (from SiteIndexer/siteindexer)
         mvn install
         mvn package
 
