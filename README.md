@@ -32,6 +32,7 @@ Provide README to BUILD, RUN, and TEST the code.
 
 
 Dicuss plans for improvments when more time is given to the project.
+Include Reasoning and trade-offs for design.
 
 ## FUTURE IMPROVEMENTS:
 
