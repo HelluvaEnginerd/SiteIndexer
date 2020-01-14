@@ -16,6 +16,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -34,6 +40,11 @@
                             <groupId>com.github.ngeor</groupId>
                             <artifactId>checkstyle-rules</artifactId>
                             <version>1.1.0</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.jsoup</groupId>
+                            <artifactId>jsoup</artifactId>
+                            <version>1.8.3</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -56,14 +67,11 @@
                 <configuration>
                   <archive>
                     <manifest>
-                      <addClasspath>true</addClasspath>
-                      <classpathPrefix>lib/</classpathPrefix>
-                      <mainClass>siteIndexer.src.main.java.com.hayden.demo.App</mainClass>
+                      <mainClass>"siteIndexer.src.main.java.com.hayden.demo.Crawler"</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
               </plugin>
-
             <!--
                 You can run jacoco in the default profile with:
                 mvn jacoco:prepare-agent test jacoco:report
