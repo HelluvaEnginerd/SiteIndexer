@@ -18,7 +18,6 @@ public class Webpage {
 
     // matches 'https://website.com'
     Pattern domainPattern = Pattern.compile("^(?:https?:\\/\\/)?(?:[^@\\/\\n]+@)?(?:www\\.)?([^:\\/?\n]+)");
-    
 
     public Webpage(Document htmlDocument){
         this.htmlDocument = htmlDocument;
@@ -52,14 +51,14 @@ public class Webpage {
     public Set<String> getExternalLinks() {
         return this.links
         .stream()
-        .filter(l -> !l.contains(domain))
+        .filter(l -> !l.contains(domain) && !l.isEmpty())
         .collect(Collectors.toSet());
     }
 
     public Set<String> getInternalLinks() {
         return this.links
         .stream()
-        .filter(l -> l.contains(domain))
+        .filter(l -> l.contains(domain) && !l.isEmpty())
         .collect(Collectors.toSet());
     }
 
@@ -79,6 +78,10 @@ public class Webpage {
         this.staticContent = staticContent;
     }
 
+    public void addStaticContent(String staticContent) {
+        this.staticContent.add(staticContent);
+    }
+
     public Document getHtmlDocument() {
         return this.htmlDocument;
     }
@@ -89,22 +92,24 @@ public class Webpage {
 
     public void printPage() {
         System.out.println("Web address: " + this.address);
+        System.out.println("");
 
         System.out.println("Internal Links");
         for (String il : getInternalLinks()) {
             System.out.println(il);
         }
+        System.out.println("");
 
         System.out.println("External Links");
         for (String el : getExternalLinks()) {
             System.out.println(el);
         }
+        System.out.println("");
 
         System.out.println("Static Content");
         for (String sc : this.staticContent) {
             System.out.println(sc);
         }
-
-
+        System.out.println("\n");
     }
 }
